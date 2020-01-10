@@ -1,0 +1,127 @@
+#loginform
+{
+    left: 200px;
+    top: 150px;    
+}
+
+#loginform input
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.card-title
+{
+    font-family: lucida handwriting;
+    text-align: center;
+    color: teal;
+    margin-top: 10%;
+}
+.card-action a
+{
+    color: teal;
+    font-family: lucida handwriting;
+    text-decoration-color: teal;
+    font-size: 12px;
+}
+
+#icone
+{
+    width: 100px;
+    position: absolute;
+    top: -50px;
+    left: 43%;
+}
+.brand-logo
+{
+    left: 3%;
+}
+
+/* input modif */
+/* label color */
+.input-field label {
+    color: #f2f2f2;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: blue;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: blue;
+  }
+
+  /* SEARCH BUTTON */
+  /* Kyo */
+.input--kyo {
+	z-index: auto;
+}
+
+.input__field--kyo {
+	padding: 0.85em 1.5em;
+	width: 100%;
+	border-radius: 2em;
+	background: #fff;
+	color: #535d92;
+}
+
+.input__label--kyo {
+	z-index: 0;
+	padding: 0 0 0 2em;
+	width: 100%;
+	text-align: left;
+}
+
+.input__label--kyo::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	background: rgba(11, 43, 205, 0.6);
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	pointer-events: none;
+}
+
+.input__label-content--kyo {
+	padding: 0.5em 0;
+}
+
+.input__field--kyo:focus,
+.input__field--kyo:focus +  .input__label--kyo .input__label-content--kyo {
+	z-index: 10000;
+}
+
+.input__field--kyo:focus + .input__label--kyo {
+	color: #fff;
+}
+
+.input__field--kyo:focus + .input__label--kyo::after {
+	opacity: 1;
+}
+/* SWUP ANIMATION */
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}

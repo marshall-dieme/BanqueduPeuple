@@ -1,0 +1,17 @@
+RewriteEngine On
+
+
+RewriteRule ^.{0}$ index.php
+
+RewriteRule ^accueil$ src/view/accueil.php
+
+RewriteRule ^client$ src/view/mainClient.php
+RewriteRule ^clients$ src/view/mainClient.php
+
+RewriteRule ^compte$ src/view/mainCompte.php
+RewriteRule ^comptes$ src/view/mainCompte.php
+
+
+RewriteRule ^addAccount$ src/controller/compteController.php
+RewriteRule ^newCompte$ src/view/nouveauCompte.php
+
