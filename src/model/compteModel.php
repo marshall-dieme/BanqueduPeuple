@@ -1,10 +1,10 @@
 <?php
     require_once 'operationModel.php';
 
-    function addClient($cni, $nom, $prenom, $adresse, $mail, $phone)
+    function addClient($nom, $prenom, $adresse, $phone)
     {
         global $bdd;
-        $request = "INSERT INTO client VALUES (null, '$cni', '$nom', '$prenom', '$adresse', '$mail', '$phone')";
+        $request = "INSERT INTO client VALUES (null, '$nom', '$prenom', '$adresse', '$phone')";
 
         $bdd->exec($request);
         //RENVOIE LE NOMBRE DE LIGNES AFFECTEES.
@@ -19,7 +19,7 @@
         $numero = createNumCompte();
         $date = date('d-M-Y');
 
-        $request = "INSERT INTO compte VALUES (null, '$numero', $solde, '$date',0, $idClient)";
+        $request = "INSERT INTO compte VALUES (null, '$numero', $solde, '$date', $idClient)";
 
 
         $compte = $bdd->exec($request);
@@ -37,13 +37,13 @@
         $query = "SELECT MAX(id) FROM compte";
         $result = $bdd->query($query)->fetch();
         $maxId = $result[0]+1;
-        $numero = "BDTS_".date('dmY')."_".$maxId;
+        $numero = "BDP_".date('dmY')."_".$maxId;
         return $numero;
     }
 
     function getComptes(){
         global $bdd;
-        $request = "SELECT compte.id, numCompte, dateCreation, solde, nom, prenom, client.id as idCli, bloque FROM compte, client WHERE idClient=client.id";
+        $request = "SELECT compte.id, numCompte, dateCreation, solde, nom, prenom, client.id as idCli FROM compte, client WHERE idClient=client.id";
         return $bdd->query($request)->fetchAll();
     }
 

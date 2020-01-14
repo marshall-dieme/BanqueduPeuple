@@ -8,11 +8,13 @@
         # code...
         extract($_POST);
         
-        $idClient = addClient($cni, $nom, $prenom, $adresse, $mail, $tel);
+        $idClient = addClient($nom, $prenom, $adresse, $tel);
+        echo $idClient;
         $result = addAccount($solde, $idClient);
+        echo $result;
         
         
-       header('location:compte');
+       //header('location:../view/compte.php');
     }
 
     if (isset($_GET['numCompte'])) {

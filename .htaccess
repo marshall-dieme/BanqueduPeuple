@@ -1,15 +1,15 @@
-RewriteEngine On
+RewriteEngine Off
 
 
 RewriteRule ^.{0}$ index.php
 
-RewriteRule ^accueil$ src/view/accueil.php
+RewriteRule ^accueil$ /src/view/accueil.php
 
-RewriteRule ^client$ src/view/mainClient.php
-RewriteRule ^clients$ src/view/mainClient.php
+RewriteRule ^client$ src/view/client.php
+RewriteRule ^clients$ src/view/client.php
 
-RewriteRule ^compte$ src/view/mainCompte.php
-RewriteRule ^comptes$ src/view/mainCompte.php
+RewriteRule ^compte$ src/view/compte.php
+RewriteRule ^comptes$ src/view/compte.php
 
 
 RewriteRule ^addAccount$ src/controller/compteController.php

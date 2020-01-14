@@ -1,55 +1,68 @@
 <?php
 	require_once '../model/database.php';
-	include_once 'topBar.php';
+	include_once '../../header.php';
 	$compte = countCompte();
 	
 	$client = countClient();
 	
-	
 	$sommeCompte = SommeCompte();
-	
-
-
 ?>
-<br>
 <div class="row">
-	<div class="col s4"></div>
-
-	<div class="col s4"></div>
-
-	<div class="col s4 grey darken-1" >
-		<article class="clock">
-  			<div class="hours-container">
-    			<div class="hours"></div>
-  			</div>
- 			 <div class="minutes-container">
-   				<div class="minutes"></div>
-  			</div>
-  			<div class="seconds-container">
-    			<div class="seconds"></div>
+	<div class="col-xl-3 col-lg-6">
+		<div class="card card-stats mb-4 mb-xl-0">
+		<div class="card-body">
+			<div class="row">
+			<div class="col">
+				<h5 class="card-title text-uppercase text-muted mb-0">Comptes</h5>
+				<span class="h2 font-weight-bold mb-0"><?php echo $compte[0];?></span>
 			</div>
-		</article>
+			<div class="col-auto">
+				<div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+				<i class="fas fa-wallet"></i>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="col-xl-3 col-lg-6">
+		<div class="card card-stats mb-4 mb-xl-0">
+		<div class="card-body">
+			<div class="row">
+			<div class="col">
+				<h5 class="card-title text-uppercase text-muted mb-0">Clients</h5>
+				<span class="h2 font-weight-bold mb-0"><?php echo $client[0];?></span>
+			</div>
+			<div class="col-auto">
+				<div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+				<i class="fas fa-users"></i>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="col-xl-3 col-lg-6">
+	</div>
+	<div class="col-xl-3 col-lg-6">
+		<div class="card card-stats mb-4 mb-xl-0">
+		<div class="card-body">
+			<div class="row">
+			<div class="col">
+				<h5 class="card-title text-uppercase text-muted mb-0">Total</h5>
+				<span class="h2 font-weight-bold mb-0"><?php echo $sommeCompte[0];?></span>
+			</div>
+			<div class="col-auto">
+				<div class="icon icon-shape bg-info text-white rounded-circle shadow">
+				<i class="fas fa-euro-sign"></i>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
 	</div>
 </div>
-<br>
-<div class="row">
-	<div class="col s3 yellow darken-4 white-text">
-		<h3 style="text-align:center"><?php echo $compte[0];?></h3>
-		<h4 style="text-align:center">Comptes</h4><br>
-	</div>
-	
-	<div class="col s3 deep-purple darken-3 white-text">
-		<h3 style="text-align:center"><?php echo $client[0];?></h3>
-		<h4 style="text-align:center">Clients</h4><br>
-	</div>
-	
-	<div class="col s3  darken-4 white-text">
-		
-	</div>
-	
-	<div class="col s3  red darken-3 white-text">
-		<h3 style="text-align:center"><?php echo $sommeCompte[0];?></h3>
-		<h4 style="text-align:center">Total</h4><br>
-	</div>
-	
-</div>
+		  
+<?php 
+	include_once '../../footer.php';
+?>
